@@ -14,7 +14,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 
-groq_api_key ='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'
+groq_api_key =os.getenv['GROQ_API_KEY']
 # --- Session state setup ---
 if 'vectors' not in st.session_state:
     st.session_state.embeddings = OllamaEmbeddings(model='llama3.1:8b')
@@ -43,17 +43,10 @@ Questions:{input}
 
 document_chain = create_stuff_documents_chain(
     llm=llm,
-    prompt=prompt_template  # optional, defaults to "context"
+    prompt=prompt_template
 )
 retriever = st.session_state.vectors.as_retriever()
 
-# retrieval_chain = RetrievalQA.from_chain_type(
-#     llm=llm,
-#     chain_type="stuff",
-#     retriever=retriever,
-#     chain_type_kwargs={"prompt": prompt_template},
-#     return_source_documents=True
-# )
 retrieval_chain = create_retrieval_chain(retriever,document_chain)
 
 prompt = st.text_input('Input your prompt here')
