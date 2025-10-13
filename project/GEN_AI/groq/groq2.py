@@ -14,7 +14,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 
-groq_api_key =os.getenv['GROQ_API_KEY']
+groq_api_key ="kafkjfkajdf-778877" #fake groq api key
 # --- Session state setup ---
 if 'vectors' not in st.session_state:
     st.session_state.embeddings = OllamaEmbeddings(model='llama3.1:8b')
