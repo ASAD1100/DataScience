@@ -5,3 +5,5 @@ local system dir location = 'D:\asad\Colab Notebooks\Notebooks'
 **Kaggle competion directory is where all the notebooks uploaded for kaggle competitions are present.**
 
 **Practice directory is only keep record of my practice notebooks.**
+
+**Agentic AI Financial Analyzer AWS deployed link:https://jaclyn-pileous-luciano.ngrok-free.dev/**
